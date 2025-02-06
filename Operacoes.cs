@@ -14,5 +14,9 @@ namespace Calculadora
         {
             return a * b;
         }
+        public static double Dividir(double a, double b)
+        {
+            return a / b;
+        }
     }
 }
