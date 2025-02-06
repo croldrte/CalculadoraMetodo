@@ -6,5 +6,9 @@ namespace Calculadora
         {
             return a + b;
         }
+        public static double Subtrair(double a, double b)
+        {
+            return a - b;
+        }
     }
 }
