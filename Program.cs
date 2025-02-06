@@ -24,6 +24,17 @@ class Program
             case "*":
                 resultado = Operacoes.Multiplicar(a, b);
                 break;
+            case "/":
+                if (b != 0)
+                {
+                    resultado = Operacoes.Dividir(a, b);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Não existe divisão por zero.");
+                    return;
+                }
         }
         Console.WriteLine($"O resultado é: {resultado}.");
     }
