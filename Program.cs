@@ -4,12 +4,27 @@ class Program
 {
     static void Main()
     {
+        bool numeroValido;
+        double a, b;
+
         Console.Clear();
         Console.WriteLine("::: CALCULADORA :::");
         Console.Write("Digite o primeiro número: ");
-        double a = double.Parse(Console.ReadLine());
+        do
+        {
+            numeroValido = double.TryParse(Console.ReadLine(), out a);
+            if (!numeroValido)
+                Console.Write("Número inválido! Tente novamente: ");
+        } while (!numeroValido);
+
         Console.Write("Digite o segundo número: ");
-        double b = double.Parse(Console.ReadLine());
+        do
+        {
+            numeroValido = double.TryParse(Console.ReadLine(), out b);
+            if (!numeroValido)
+                Console.Write("Número inválido! Tente novamente: ");
+        } while (!numeroValido);
+
         Console.Write("Escolha uma operação (+, -, *, /): ");
         string operacao = Console.ReadLine();
         double resultado = 0;
