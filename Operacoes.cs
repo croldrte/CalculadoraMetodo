@@ -10,5 +10,9 @@ namespace Calculadora
         {
             return a - b;
         }
+        public static double Multiplicar(double a, double b)
+        {
+            return a * b;
+        }
     }
 }

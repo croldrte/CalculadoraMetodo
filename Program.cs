@@ -18,8 +18,11 @@ class Program
             case "+":
                 resultado = Operacoes.Adicionar(a, b);
                 break;
-                case "-":
+            case "-":
                 resultado = Operacoes.Subtrair(a, b);
+                break;
+            case "*":
+                resultado = Operacoes.Multiplicar(a, b);
                 break;
         }
         Console.WriteLine($"O resultado é: {resultado}.");
