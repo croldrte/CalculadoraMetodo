@@ -1,4 +1,6 @@
-﻿using Calculadora;
+﻿using System.Drawing;
+using Console = Colorful.Console;
+using Calculadora;
 
 class Program
 {
@@ -9,14 +11,16 @@ class Program
         string operacao;
 
         Console.Clear();
-        Console.WriteLine("::: CALCULADORA :::");
+        Console.WriteLine("╔═══════════════════════════╗", Color.Blue);
+        Console.WriteLine("║        CALCULADORA        ║", Color.Blue);
+        Console.WriteLine("╚═══════════════════════════╝", Color.Blue);
 
         Console.Write("Digite o primeiro número: ");
         do
         {
             entradaValida = double.TryParse(Console.ReadLine(), out a);
             if (!entradaValida)
-                Console.Write("Número inválido! Tente novamente: ");
+                Console.Write("Número inválido! Tente novamente: ", Color.Red);
         } while (!entradaValida);
 
         Console.Write("Digite o segundo número: ");
@@ -24,7 +28,7 @@ class Program
         {
             entradaValida = double.TryParse(Console.ReadLine(), out b);
             if (!entradaValida)
-                Console.Write("Número inválido! Tente novamente: ");
+                Console.Write("Número inválido! Tente novamente: ", Color.Red);
         } while (!entradaValida);
 
         Console.Write("Escolha uma operação (+, -, *, /): ");
@@ -54,17 +58,15 @@ class Program
                     }
                     else
                     {
-                        Console.WriteLine("Não existe divisão por zero.");
+                        Console.WriteLine("Não existe divisão por zero.", Color.Blue);
                         return;
                     }
                 default:
                     entradaValida = false;
-                    Console.Write("Operação inválida! Tente novamente: ");
+                    Console.Write("Operação inválida! Tente novamente: ", Color.Red);
                     break;
             }
         } while (!entradaValida);
-        Console.Clear();
-        Console.WriteLine("::: CALCULADORA :::");
-        Console.WriteLine($"{a} {operacao} {b} = {resultado}");
+        Console.Write($"O resultado é: {resultado}.", Color.Blue);
     }
 }
